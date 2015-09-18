@@ -9,6 +9,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,7 +18,9 @@ import android.view.View.OnLongClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.view.View.OnDragListener;
 
 public class draganddrop extends AppCompatActivity {
 
@@ -31,6 +34,7 @@ public class draganddrop extends AppCompatActivity {
         tx.setTypeface(face);
         findViewById(R.id.potato).setOnLongClickListener(longlisten);
         findViewById(R.id.tomato).setOnLongClickListener(longlisten);
+        findViewById(R.id.bowl).setOnDragListener(DropListener);
 
 
     }
@@ -42,49 +46,70 @@ public class draganddrop extends AppCompatActivity {
         return true;
     }
 
-    OnLongClickListener longlisten = new OnLongClickListener()
-    {
+    OnLongClickListener longlisten = new OnLongClickListener() {
 
 
         @Override
-    public boolean onLongClick(View v)
-        {
+        public boolean onLongClick(View v) {
 
             DragShadow dragShadow = new DragShadow(v);
-            ClipData data= ClipData.newPlainText("","");
-            v.startDrag(data,dragShadow, v, 0);
-            return false;
+            ClipData data = ClipData.newPlainText("", "");
+            v.startDrag(data, dragShadow, v, 0);
+            return true;
         }
 
     };
 
-    private class DragShadow extends View.DragShadowBuilder
-    {
+    private class DragShadow extends View.DragShadowBuilder {
         ColorDrawable greyBox;
-        public DragShadow(View view)
-        {
+
+        public DragShadow(View view) {
             super(view);
             greyBox = new ColorDrawable(Color.LTGRAY);
         }
 
 
-        public void OnDragShadow(Canvas canvas)
-        {
-           greyBox.draw(canvas);
+        public void OnDragShadow(Canvas canvas) {
+            greyBox.draw(canvas);
         }
 
 
-        public void OnProvideShadowMatrics(Point shadowSize, Point shadowTouchPoint)
-        {
+        public void OnProvideShadowMatrics(Point shadowSize, Point shadowTouchPoint) {
 
             View v = getView();
-            int height = (int)v.getHeight()/2;
-            int width = (int)v.getWidth()/2;
-            greyBox.setBounds(0,0,width,height);
+            int height = (int) v.getHeight() / 2;
+            int width = (int) v.getWidth() / 2;
+            greyBox.setBounds(0, 0, width, height);
             shadowSize.set(width, height);
-            shadowTouchPoint.set((int)width,(int)height);
+            shadowTouchPoint.set((int) width, (int) height);
         }
     }
+
+    View imageView = new ImageView(this);
+    OnDragListener DropListener = new OnDragListener() {
+
+        public boolean onDrag(View v, DragEvent event) {
+            int dragEvent = event.getAction();
+            switch (dragEvent)
+
+            {
+                case DragEvent.ACTION_DRAG_ENTERED:
+                    Log.i("Drag Event", "Entered");
+                    break;
+                case DragEvent.ACTION_DRAG_ENDED:
+                    Log.i("Drag Event", "Ended");
+                    break;
+                case DragEvent.ACTION_DROP:
+                    TextView bowl = (TextView) v;
+                    TextView dragged = (TextView) event.getLocalState();
+                    bowl.setText(dragged.getText());
+                    break;
+
+            }
+            return true;
+        }
+    };
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -101,3 +126,4 @@ public class draganddrop extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
