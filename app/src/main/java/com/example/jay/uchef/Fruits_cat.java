@@ -11,7 +11,7 @@ public class Fruits_cat extends Categories {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.vegetable_cat);
+        setContentView(R.layout.fruits_cat);
     }
 
     @Override
