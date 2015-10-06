@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package in.ladvas.uchef;
 
 import android.content.ClipData;
@@ -22,6 +23,12 @@ import android.view.View.OnDragListener;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
+=======
+package com.example.jay.uchef;
+
+import android.app.Activity;
+import android.content.Context;
+>>>>>>> origin/master
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -37,19 +44,30 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+<<<<<<< HEAD
 
+=======
+/**
+ * Created by JAY on 10/3/2015.
+ */
+>>>>>>> origin/master
 public class ListViewCheckboxesActivity extends Activity {
     MyCustomAdapter dataAdapter = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
+<<<<<<< HEAD
         TextView tx;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         tx = (TextView) findViewById(R.id.findSelected);
         Typeface face = Typeface.createFromAsset(getAssets(), "fonts/CURLZ.TTF");
         tx.setTypeface(face);
+=======
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+>>>>>>> origin/master
 
         //Generate list View from ArrayList
         displayListView();
@@ -177,7 +195,11 @@ public class ListViewCheckboxesActivity extends Activity {
     private void checkButtonClick()
     {
 
+<<<<<<< HEAD
         ImageButton myButton = (ImageButton) findViewById(R.id.findSelected);
+=======
+        Button myButton = (Button) findViewById(R.id.findSelected);
+>>>>>>> origin/master
 
         myButton.setOnClickListener(new View.OnClickListener()
         {

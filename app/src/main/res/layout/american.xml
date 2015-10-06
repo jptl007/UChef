@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/inner_bg">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AMERICAN"
+        android:id="@+id/browse_list"
+        android:layout_marginBottom="46dp"
+        android:layout_marginTop="60dp"
+        android:textSize="30dp"
+        android:layout_gravity="center"/>
+
+
+    <ImageButton
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:id="@+id/pasta"
+        android:background="@drawable/american"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-15dp" />
+
+    <ImageButton
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:id="@+id/pizza"
+        android:background="@drawable/american"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp" />
+
+    <ImageButton
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:id="@+id/breads"
+        android:background="@drawable/american"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp" />
+
+
+</LinearLayout>
