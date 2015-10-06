@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/logo_try2"
+    android:id="@+id/ingredientsLayout"
+    android:clickable="true"
+    android:baselineAligned="true">
 
-    <Button android:id="@+id/findSelected"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Find states that are Selected" />
+
 
     <ListView android:id="@+id/listView1" android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="45dp"
+        android:layout_marginTop="45dp" />
+
+    <ImageButton
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:id="@+id/findSelected"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/show_1"
+        android:layout_marginBottom="100dp"
+        android:baselineAlignBottom="false" />
+
 </LinearLayout>
