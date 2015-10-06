@@ -5,8 +5,6 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -20,9 +18,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 /**
- * Created by JAY on 9/4/2015.
+ * Created by JAY on 10/6/2015.
  */
-public class Meat_cat extends Categories {
+public class Seafood_cat extends Categories {
     MyCustomAdapter dataAdapter = null;
 
     @Override
@@ -31,10 +29,10 @@ public class Meat_cat extends Categories {
         ListView lv;
         TextView tx;
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.meat_cat);
+        setContentView(R.layout.seafood_cat_activity);
         lv = (ListView) findViewById(R.id.listView1);
         Typeface face = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
-        tx = (TextView) findViewById(R.id.meat_id);
+        tx = (TextView) findViewById(R.id.seafood_id);
         Typeface face_veg = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
         //tx.setTypeface(face);
 
@@ -51,7 +49,7 @@ public class Meat_cat extends Categories {
         //Array list of countries
         ArrayList<Cusines_methods> stateList = new ArrayList<Cusines_methods>();
 
-        Cusines_methods _states = new Cusines_methods("Chicken",false);
+        Cusines_methods _states = new Cusines_methods("Fish",false);
         stateList.add(_states);
         _states = new Cusines_methods("Chicken",false);
         stateList.add(_states);
