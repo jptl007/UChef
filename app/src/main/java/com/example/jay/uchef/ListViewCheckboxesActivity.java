@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package in.ladvas.uchef;
 
 import android.content.ClipData;
@@ -23,12 +22,6 @@ import android.view.View.OnDragListener;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
-=======
-package com.example.jay.uchef;
-
-import android.app.Activity;
-import android.content.Context;
->>>>>>> origin/master
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -44,30 +37,22 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-<<<<<<< HEAD
 
-=======
-/**
- * Created by JAY on 10/3/2015.
- */
->>>>>>> origin/master
 public class ListViewCheckboxesActivity extends Activity {
     MyCustomAdapter dataAdapter = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-<<<<<<< HEAD
+        ListView lv;
         TextView tx;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        tx = (TextView) findViewById(R.id.findSelected);
-        Typeface face = Typeface.createFromAsset(getAssets(), "fonts/CURLZ.TTF");
-        tx.setTypeface(face);
-=======
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
->>>>>>> origin/master
+        lv = (ListView) findViewById(R.id.listView1);
+        Typeface face = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
+        tx = (TextView) findViewById(R.id.veg_id);
+        Typeface face_veg = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
+        //tx.setTypeface(face);
 
         //Generate list View from ArrayList
         displayListView();
@@ -82,29 +67,27 @@ public class ListViewCheckboxesActivity extends Activity {
         //Array list of countries
         ArrayList<States> stateList = new ArrayList<States>();
 
-        States _states = new States(" ","Potato",false);
+        States _states = new States("Potato",false);
         stateList.add(_states);
-        _states = new States(" ","Tomato",false);
+        _states = new States("Tomato",false);
         stateList.add(_states);
-        _states = new States("3","Cheese",false);
+        _states = new States("Cheese",false);
         stateList.add(_states);
-        _states = new States("JK","Jammu & Kashmir",false);
+        _states = new States("Mushroom",false);
         stateList.add(_states);
-        _states = new States("KA","Karnataka",false);
+        _states = new States("Onion",false);
         stateList.add(_states);
-        _states = new States("KL","Kerala",false);
+        _states = new States("Lettuce",false);
         stateList.add(_states);
-        _states = new States("RJ","Rajasthan",false);
+        _states = new States("Olives",false);
         stateList.add(_states);
-        _states = new States("WB","West Bengal",false);
-        stateList.add(_states);
+
 
         //create an ArrayAdaptar from the String Array
         dataAdapter = new MyCustomAdapter(this,R.layout.state_info, stateList);
         ListView listView = (ListView) findViewById(R.id.listView1);
         // Assign adapter to ListView
         listView.setAdapter(dataAdapter);
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
 
@@ -154,7 +137,7 @@ public class ListViewCheckboxesActivity extends Activity {
                 convertView = vi.inflate(R.layout.state_info, null);
 
                 holder = new ViewHolder();
-                holder.code = (TextView) convertView.findViewById(R.id.code);
+                //holder.code = (TextView) convertView.findViewById(R.id.code);
                 holder.name = (CheckBox) convertView.findViewById(R.id.checkBox1);
 
                 convertView.setTag(holder);
@@ -166,12 +149,13 @@ public class ListViewCheckboxesActivity extends Activity {
                         CheckBox cb = (CheckBox) v;
                         States _state = (States) cb.getTag();
 
-                        Toast.makeText(getApplicationContext(), "Selected Item: " + cb.getText() + " is " + cb.isChecked(),
-                                Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Selected Item: " + cb.getText(),
+                                Toast.LENGTH_SHORT).show();
 
                         _state.setSelected(cb.isChecked());
                     }
                 });
+
 
             }
             else
@@ -181,7 +165,7 @@ public class ListViewCheckboxesActivity extends Activity {
 
             States state = stateList.get(position);
 
-            holder.code.setText(" " + state.getCode() + " ");
+            //holder.code.setText(" " + state.getCode() + " ");
             holder.name.setText(state.getName());
             holder.name.setChecked(state.isSelected());
 
@@ -195,11 +179,7 @@ public class ListViewCheckboxesActivity extends Activity {
     private void checkButtonClick()
     {
 
-<<<<<<< HEAD
         ImageButton myButton = (ImageButton) findViewById(R.id.findSelected);
-=======
-        Button myButton = (Button) findViewById(R.id.findSelected);
->>>>>>> origin/master
 
         myButton.setOnClickListener(new View.OnClickListener()
         {
@@ -209,7 +189,7 @@ public class ListViewCheckboxesActivity extends Activity {
             {
 
                 StringBuffer responseText = new StringBuffer();
-                responseText.append("You have selected...\n");
+                responseText.append("You have selected\n");
 
                 ArrayList<States> stateList = dataAdapter.stateList;
 
@@ -224,7 +204,7 @@ public class ListViewCheckboxesActivity extends Activity {
                 }
 
                 Toast.makeText(getApplicationContext(),
-                        responseText, Toast.LENGTH_LONG).show();
+                        responseText, Toast.LENGTH_SHORT).show();
             }
         });
     }
