@@ -1,22 +1,22 @@
-package com.example.jay.uchef;
+package in.ladvas.uchef;
 
 /**
  * Created by JAY on 10/3/2015.
  */
 public class States {
-    String code = null;
+    //String code = null;
     String name = null;
     boolean selected = false;
 
-    public States(String code, String name, boolean selected)
+    public States(String name, boolean selected)
     {
         super();
-        this.code = code;
+       // this.code = code;
         this.name = name;
         this.selected = selected;
     }
 
-    public String getCode()
+   /* public String getCode()
     {
         return code;
     }
@@ -25,7 +25,7 @@ public class States {
     {
         this.code = code;
     }
-
+*/
     public String getName()
     {
         return name;
