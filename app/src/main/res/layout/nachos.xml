@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/inner_bg">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nachos"
+        android:id="@+id/nachos"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="40dp"
+        android:textSize="40dp"
+        android:layout_gravity="center"/>
+
+
+    <ImageView
+        android:layout_width="299dp"
+        android:layout_height="199dp"
+        android:id="@+id/imageView"
+        android:layout_gravity="center"
+        android:background="@drawable/nachos"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="0.30" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description:              Take Potatoes and then cut them evenly. Wash the ...READ MORE "
+        android:id="@+id/nachos_Desc"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="1dp"
+        android:textSize="30dp" />
+
+</LinearLayout>
