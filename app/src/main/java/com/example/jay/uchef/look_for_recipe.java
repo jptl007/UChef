@@ -20,6 +20,13 @@ public class look_for_recipe extends Activity {
         ImageButton mexican;
         TextView br;
 
+       asian=  (ImageButton) findViewById(R.id.asian_btn);
+        american=  (ImageButton) findViewById(R.id.american_btn);
+        italian=  (ImageButton) findViewById(R.id.italian_btn);
+        indian=  (ImageButton) findViewById(R.id.indian_btn);
+        mexican=  (ImageButton) findViewById(R.id.mexican_btn);
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.look_recipes);
     br = (TextView) findViewById(R.id.browse_list);

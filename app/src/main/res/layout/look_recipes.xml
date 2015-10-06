@@ -29,7 +29,7 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
-        android:id="@+id/american"
+        android:id="@+id/american_btn"
         android:background="@drawable/american"
         android:layout_gravity="center_horizontal"/>
 
@@ -37,7 +37,7 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
-        android:id="@+id/indian"
+        android:id="@+id/indian_btn"
         android:background="@drawable/indian"
         android:layout_gravity="center_horizontal"/>
 
@@ -45,7 +45,7 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
-        android:id="@+id/italian"
+        android:id="@+id/italian_btn"
         android:background="@drawable/italian"
         android:layout_gravity="center_horizontal"/>
 
@@ -53,7 +53,7 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
-        android:id="@+id/mexican"
+        android:id="@+id/mexican_btn"
         android:background="@drawable/mexican"
         android:layout_gravity="center_horizontal"/>
 
