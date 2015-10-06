@@ -71,7 +71,7 @@ public class ListViewCheckboxesActivity extends Activity {
         stateList.add(_states);
         _states = new States("Tomato",false);
         stateList.add(_states);
-        _states = new States("Cheese",false);
+        _states = new States("Cabbage",false);
         stateList.add(_states);
         _states = new States("Mushroom",false);
         stateList.add(_states);
@@ -80,6 +80,16 @@ public class ListViewCheckboxesActivity extends Activity {
         _states = new States("Lettuce",false);
         stateList.add(_states);
         _states = new States("Olives",false);
+        stateList.add(_states);
+        _states = new States("Cauliflower",false);
+        stateList.add(_states);
+        _states = new States("Zucchini",false);
+        stateList.add(_states);
+        _states = new States("Capsicum",false);
+        stateList.add(_states);
+        _states = new States("Carrots",false);
+        stateList.add(_states);
+        _states = new States("Spinach",false);
         stateList.add(_states);
 
 
