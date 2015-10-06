@@ -18,43 +18,43 @@
 
     <ImageButton
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="150dp"
         android:id="@+id/asian_btn"
-        android:background="@drawable/asian"
+        android:background="@drawable/asian_button"
         android:layout_gravity="center_horizontal"/>
 
 
 
     <ImageButton
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="150dp"
         android:layout_marginTop="30dp"
         android:id="@+id/american_btn"
-        android:background="@drawable/american"
+        android:background="@drawable/american_button"
         android:layout_gravity="center_horizontal"/>
 
     <ImageButton
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="150dp"
         android:layout_marginTop="30dp"
         android:id="@+id/indian_btn"
-        android:background="@drawable/indian"
+        android:background="@drawable/indian_button"
         android:layout_gravity="center_horizontal"/>
 
     <ImageButton
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="150dp"
         android:layout_marginTop="30dp"
         android:id="@+id/italian_btn"
-        android:background="@drawable/italian"
+        android:background="@drawable/italian_button"
         android:layout_gravity="center_horizontal"/>
 
     <ImageButton
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="150dp"
         android:layout_marginTop="30dp"
         android:id="@+id/mexican_btn"
-        android:background="@drawable/mexican"
+        android:background="@drawable/mexican_button"
         android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>
