@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/inner_bg">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BROWSE RECIPES!!!"
+        android:id="@+id/browse_list"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="75dp"
+        android:textSize="30dp"
+        android:layout_gravity="center" />
+
+
+
+    <ImageButton
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:id="@+id/asian_btn"
+        android:background="@drawable/asian"
+        android:layout_gravity="center_horizontal"/>
+
+
+
+    <ImageButton
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/american"
+        android:background="@drawable/american"
+        android:layout_gravity="center_horizontal"/>
+
+    <ImageButton
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/indian"
+        android:background="@drawable/indian"
+        android:layout_gravity="center_horizontal"/>
+
+    <ImageButton
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/italian"
+        android:background="@drawable/italian"
+        android:layout_gravity="center_horizontal"/>
+
+    <ImageButton
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/mexican"
+        android:background="@drawable/mexican"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
