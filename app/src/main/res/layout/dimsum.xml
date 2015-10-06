@@ -28,7 +28,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Description:              Take Potatoes and then cut them evenly. Wash the ...READ MORE "
+        android:text="Description:              Make 1 recipe of Basic Yeast Dough for Steamed ...READ MORE "
         android:id="@+id/dim_sum"
         android:layout_marginBottom="1dp"
         android:layout_marginTop="1dp"
