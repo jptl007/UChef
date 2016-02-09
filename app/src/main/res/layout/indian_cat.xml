@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/inner_bg"
     android:id="@+id/currylayout">
+=======
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/inner_bg">
+>>>>>>> origin/master
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Curry"
         android:id="@+id/indian_curry"
+<<<<<<< HEAD
         android:layout_marginTop="54dp"
         android:textSize="30dp"
         android:textColor="#000000"
@@ -51,3 +59,31 @@
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
+=======
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="60dp"
+        android:textSize="30dp"
+        android:textColor="#000000"
+        android:layout_gravity="center"/>
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/curry_img"
+        android:layout_gravity="center"
+        android:background="@drawable/curry"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description: Take Potatoes and then cut them evenly. Wash the...READ MORE "
+        android:id="@+id/curry_desc"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp" />
+
+</LinearLayout>
+>>>>>>> origin/master
