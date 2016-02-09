@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/inner_bg"
+    android:id="@+id/currylayout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Curry"
+        android:id="@+id/indian_curry"
+        android:layout_marginTop="54dp"
+        android:textSize="30dp"
+        android:textColor="#000000"
+        android:layout_gravity="center"
+        android:layout_row="0"
+        android:layout_column="4"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_marginTop="90dp">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:id="@+id/curry_img"
+                android:layout_gravity="center"
+                android:background="@drawable/curry"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STEP-1: Heat the butter in a pan and add the minced onions. Fry until golden brown. Add the ginger, garlic, coriander, chilli powder, turmeric, and salt. Fry for a minute until fragrant. Add the pureed tomato and tomato paste and cook for 3-4 mins until the mixture bubbles uniformly. \n\nSTEP-2: Thrown in the kasuri methi, milk, and the cubed chicken. Cook covered for 8-10 mins until the chicken is soft. The chicken will let out more water, just check once or twice in between and give the curry a stir. Keep the flame on sim. When the chicken is cooked soft, open the lid and cook for a further minute or two. If the gravy is too thick, add some water at this stage. When done, add the garam masala or chicken masala and the cream or cashew paste. Give it a good stir, but don't boil \n\nSTEP-3: Adjust salt, garnish with the coriander leaves, and remove from fire. Serve hot with tawa naan, vegetable pulao, or jeera rice."
+                android:id="@+id/curry_desc"
+                android:textColor="#000000"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

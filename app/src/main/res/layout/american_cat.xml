@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/inner_bg"
+    android:id="@+id/cheesypotatolayout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cheesy Potato"
+        android:id="@+id/cheesypotato"
+        android:layout_marginTop="54dp"
+        android:textSize="30dp"
+        android:textColor="#000000"
+        android:layout_gravity="center"
+        android:layout_row="0"
+        android:layout_column="4"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_marginTop="90dp">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:id="@+id/cheesypotato_img"
+                android:layout_gravity="center"
+                android:background="@drawable/cheesypotato"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STEP-1: Position a rack in the upper third of the oven and preheat to 425 degrees F. Generously brush a large skillet with butter, then rub with the garlic. Combine the mozzarella, asiago and raclette in a bowl. \n\nSTEP-2: Heat the skillet over medium-high heat. Add half of the potatoes, spreading them out. Sprinkle with 3/4 teaspoon salt, half of the cut-up butter, half of the shredded cheese blend, and pepper to taste. Arrange the remaining potatoes on top. Sprinkle with 3/4 teaspoon salt, and pepper to taste. Pour the cream over the potatoes, then add the nutmeg and bay leaves; simmer 3 minutes. Dot the potatoes with the remaining cut-up butter. Generously brush a shallow baking dish with butter; slide the potatoes into the dish; arrange with a fork, if desired. (If your skillet is ovenproof, you can skip this step and bake the potatoes in the skillet.\n\nSTEP-3: Sprinkle the potatoes with the parmesan and the remaining shredded cheese blend. Bake until golden, about 25 minutes. Let rest 5 minutes before serving. Discard the bay leaves."
+                android:id="@+id/cheesypotato_desc"
+                android:textColor="#000000"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

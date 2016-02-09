@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/inner_bg"
+    android:id="@+id/dimsumlayout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dim Sum"
+        android:id="@+id/dimsum"
+        android:layout_marginTop="54dp"
+        android:textSize="30dp"
+        android:textColor="#000000"
+        android:layout_gravity="center"
+        android:layout_row="0"
+        android:layout_column="4"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_marginTop="90dp">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:id="@+id/dimsum_img"
+                android:layout_gravity="center"
+                android:background="@drawable/dimsum"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STEP-1: Place the mince, chilli, garlic, ginger, coriander and fish sauce in a bowl. Mix until well combined. Lay the wonton wrappers out in a single layer on a clean surface. Spoon teaspoonfuls of the mixture into the centre of each wonton. Brush the edges of one wonton and bring the edges up to tightly enclose the filling. Press to seal. \n\nSTEP-2: Line a large steamer basket with non-stick baking paper. Arrange the wontons over the base of the basket in a single layer. Place the basket over a wok of barely simmer water (making sure the water doesn't touch the base). Cover and steam for 8-10 minutes or until cooked. Transfer to a serving plate and cover loosely with foil to keep warm. Repeat with remaining dim sims. \n\nSTEP-3: Meanwhile, to make the dipping sauce, combine the sweet chilli sauce, lime juice and fish sauce in a small bowl."
+                android:id="@+id/dimsum_desc"
+                android:textColor="#000000"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

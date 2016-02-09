@@ -2,8 +2,8 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="800dp"
-    android:background="@drawable/inner_bg">
+    android:layout_height="fill_parent"
+    android:background="@drawable/browse_bg">
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
@@ -12,17 +12,17 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="60dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Browse Recipes"
+        android:text="Select Cuisine"
         android:textSize="30dp"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:id="@+id/browse_cat"
         android:layout_gravity="center_horizontal" />
 
     <ImageButton
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:layout_marginTop="20dp"
         android:id="@+id/asian_btn"
         android:background="@drawable/asian"
@@ -30,7 +30,7 @@
 
     <ImageButton
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:layout_marginTop="30dp"
         android:id="@+id/american_btn"
         android:background="@drawable/american"
@@ -38,7 +38,7 @@
 
     <ImageButton
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:layout_marginTop="30dp"
         android:id="@+id/indian_btn"
         android:background="@drawable/indian"
@@ -46,7 +46,7 @@
 
     <ImageButton
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:layout_marginTop="30dp"
         android:id="@+id/italian_btn"
         android:background="@drawable/italian"
@@ -54,7 +54,7 @@
 
     <ImageButton
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:layout_marginTop="30dp"
         android:id="@+id/mexican_btn"
         android:background="@drawable/mexican"

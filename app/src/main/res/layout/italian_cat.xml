@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/inner_bg"
+    android:id="@+id/pastalayout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pasta"
+        android:id="@+id/pasta_title"
+        android:layout_marginTop="54dp"
+        android:textSize="30dp"
+        android:textColor="#000000"
+        android:layout_gravity="center"
+        android:layout_row="0"
+        android:layout_column="4"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_marginTop="90dp">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:id="@+id/pasta_img"
+                android:layout_gravity="center"
+                android:background="@drawable/pasta"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STEP-1: Heat oil in a large saucepan over medium-high heat. Cook onion, carrot, celery and garlic, stirring, for 5 minutes or until softened. Add mince. Cook, breaking up with a wooden spoon, for 6 to 8 minutes or until browned. \n\nSTEP-2: Add paste, tomatoes, oregano, nutmeg and 1/2 cup cold water. Bring to the boil. Reduce heat to low. Simmer, uncovered, for 20 to 30 minutes or until thick. Season with salt and pepper. \n\nSTEP-3: Meanwhile, cook pasta in a large saucepan of boiling, salted water, following packet directions, until tender. Drain. Divide pasta among serving bowls. Spoon over sauce. Serve topped with cheese."
+                android:id="@+id/pasta_desc"
+                android:textColor="#000000"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

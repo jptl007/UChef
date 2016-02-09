@@ -5,18 +5,18 @@
     android:backgroundTint="#b86b17"
     android:backgroundTintMode="src_over">
 
-    <CheckBox android:id="@+id/checkBox1"
+    <CheckBox
+        android:id="@+id/checkBox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:focusable="false"
-        android:textColor="#4f2716"
+        android:textColor="#ffffff"
         android:text="checkbox"
         android:textSize="25dp"
         android:singleLine="false"
         android:outlineProvider="paddedBounds"
         android:checked="false"
-
         android:backgroundTint="#ff000000"
         android:layout_marginLeft="30dp"
         android:paddingLeft="15dp"/>

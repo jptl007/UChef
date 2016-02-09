@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/inner_bg"
+    android:id="@+id/nachoslayout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nachos"
+        android:id="@+id/nachos_title"
+        android:layout_marginTop="54dp"
+        android:textSize="30dp"
+        android:textColor="#000000"
+        android:layout_gravity="center"
+        android:layout_row="0"
+        android:layout_column="4"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_marginTop="90dp">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="120dp"
+                android:id="@+id/nachos_img"
+                android:layout_gravity="center"
+                android:background="@drawable/nachos"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STEP-1: Preheat oven to 180°C. Place chilli con carne in a large saucepan over medium heat and cook, stirring occasionally, for 5 minutes or until hot. Divide half the corn chips among 6 heatproof, ovenproof serving bowls. Spoon half the chilli con carne over the corn chips and sprinkle with half the cheese. Repeat with the remaining corn chips, chilli con carne and cheese to make a second layer. Place the bowls on a baking tray. Bake in preheated oven for 10 minutes or until cheese melts and is golden brown. Remove from oven. \n\nSTEP-2: Meanwhile, to make the guacamole, use a fork to mash the avocado and lime juice together in a bowl. Taste and season with salt and pepper. \n\nSTEP-3: To make the tomato salsa, combine the tomato, coriander and chilli in a small bowl. Top nachos with a dollop of guacamole and sour cream. Top with tomato salsa to serve."
+                android:id="@+id/nachos_desc"
+                android:textColor="#000000"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
