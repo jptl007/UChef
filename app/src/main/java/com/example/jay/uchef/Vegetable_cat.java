@@ -1,39 +1,82 @@
-package com.example.jay.uchef;
+package in.ladvas.uchef;
 
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+        import android.content.Context;
+        import android.database.Cursor;
+        import android.graphics.Typeface;
+        import android.os.Bundle;
+        import android.util.Log;
+        import android.view.LayoutInflater;
+        import android.view.Menu;
+        import android.view.MenuItem;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.Adapter;
+        import android.widget.AdapterView;
+        import android.widget.ArrayAdapter;
+        import android.widget.CheckBox;
+        import android.widget.CursorAdapter;
+        import android.widget.GridView;
+        import android.widget.ImageButton;
+        import android.widget.ImageView;
+        import android.widget.ListView;
+        import android.widget.SimpleCursorAdapter;
+        import android.widget.TextView;
+        import android.widget.Toast;
+        import android.widget.BaseAdapter;
+
+        import in.ladvas.uchef.R;
+
+        import java.util.ArrayList;
 
 /**
  * Created by JAY on 9/1/2015.
  */
 public class Vegetable_cat extends Categories {
+    DBHelper mydb;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+     @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        mydb = new DBHelper(this);
+        ListView lv;
+        TextView tx;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vegetable_cat);
+
+        //GridView gridview = (GridView) findViewById(R.id.gridview);
+        //gridview.setAdapter(new ImageAdapter(this));
+        lv = (ListView) findViewById(R.id.listviewV);
+        Typeface face = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
+        tx = (TextView) findViewById(R.id.veg_id);
+        Typeface face_veg = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
+        //tx.setTypeface(face);
+
+
+
+        //Generate list View from ArrayList
+        displayListView();
+
+       // checkButtonClick();
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_initial_screen, menu);
-        return true;
+
+    private void displayListView() {
+        Cursor Alling = mydb.getvegIng();
+        String[] getingnames = new String[]{
+                DBHelper.ING_NAME_COL
+        };
+        int[] getingid = new int[]{R.id.veg_id};
+
+        //create an ArrayAdaptar from the String Array
+        SimpleCursorAdapter myCursorAdapter = new SimpleCursorAdapter(
+                this, R.layout.veg_ing_chkbx_activity, Alling, getingnames, getingid);
+        ListView listView = (ListView) findViewById(R.id.listviewV);
+        listView.setAdapter(myCursorAdapter);
+        // Assign adapter to ListView
+
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
-}
+
