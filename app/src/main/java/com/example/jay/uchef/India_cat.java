@@ -1,29 +1,50 @@
 package com.example.jay.myapplication;
 
+import android.database.Cursor;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 /**
  * Created by JAY on 10/7/2015.
  */
 public class India_cat extends Look_for_recipes {
+    DBHelper mydb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TextView indian_recipe;
-        TextView desc_indian;
+
+        mydb = new DBHelper(this);
+        ListView lv;
+        TextView tx;
 
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.indian_cat);
 
-        indian_recipe = (TextView) findViewById(R.id.indian_curry);
+        lv = (ListView) findViewById(R.id.curry_desc);
         Typeface face = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
-        indian_recipe.setTypeface(face);
+        tx = (TextView) findViewById(R.id.text_id);
+        Typeface face_veg = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
 
-        desc_indian = (TextView) findViewById(R.id.curry_desc);
-        Typeface face2 = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
-        desc_indian.setTypeface(face2);
+        displayListView();
+
+
+    }
+    private void displayListView() {
+        Cursor Alling = mydb.getcurryrec();
+        String[] getingnames = new String[]{
+                DBHelper.REC_DESC_COL
+        };
+        int[] getingid = new int[]{R.id.text_id};
+
+        //create an ArrayAdaptar from the String Array
+        SimpleCursorAdapter myCursorAdapter = new SimpleCursorAdapter(
+                this, R.layout.veg_ing_chkbx_activity, Alling, getingnames, getingid);
+        ListView listView = (ListView) findViewById(R.id.curry_desc);
+        listView.setAdapter(myCursorAdapter);
+        // Assign adapter to ListView
 
     }
 }
