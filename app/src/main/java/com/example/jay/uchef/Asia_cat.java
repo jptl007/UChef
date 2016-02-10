@@ -1,12 +1,13 @@
-package in.ladvas.uchef;
+package com.example.jay.myapplication;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,21 +20,22 @@ public class Asia_cat extends Look_for_recipes {
     DBHelper mydb;
     String rec;
     String recipe;
-            @Override
-            protected void onCreate (Bundle savedInstanceState){
-                //TextView asian_recipe;
-                //TextView textview_asian;
-                //TextView textview1_asian;
-                //TextView textview2_asian;
-                //TextView textview3_asian;
-                //TextView textview4_asian;
+    @Override
+    public void onCreate (Bundle savedInstanceState){
 
-                String catname;
+        mydb = new DBHelper(this);
+        ListView lv;
+        TextView tx;
 
-                super.onCreate(savedInstanceState);
-                setContentView(R.layout.asian_cat);
-                mydb = new DBHelper(this);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.asian_cat);
 
+        lv = (ListView) findViewById(R.id.dimsum_desc);
+        Typeface face = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
+        tx = (TextView) findViewById(R.id.text_id);
+        Typeface face_veg = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
+
+        displayListView();
                 /*mydb.insert_cat(1, "Vegetables");
                 mydb.insert_cat(2, "Fruits");
                 mydb.insert_cat(3, "Dairy");
@@ -41,8 +43,8 @@ public class Asia_cat extends Look_for_recipes {
                 mydb.insert_cat(5, "Seafood");
 
                 mydb.insert_cat(6,"Bakery"); */
-               // mydb.insert_ing(1, "Potato", 1);
-                //mydb.insert_ing(2, "Tomato", 1);
+        // mydb.insert_ing(1, "Potato", 1);
+        //mydb.insert_ing(2, "Tomato", 1);
               /*  mydb.insert_ing(3,"Cabbage", 1);
                 mydb.insert_ing(4,"Mushroom", 1);
                 mydb.insert_ing(5,"Onion", 1);
@@ -70,16 +72,88 @@ public class Asia_cat extends Look_for_recipes {
                 mydb.insert_ing(27,"Papaya", 2);
                 mydb.insert_ing(28,"Plum", 2);
                 mydb.insert_ing(29, "Sapota", 2);
-*/
-                Cursor Alling = mydb.getCat();
+                mydb.insert_ing(30, "Milk", 3);
+                mydb.insert_ing(31, "Cheese", 3);
+                mydb.insert_ing(32, "Yogurt", 3);
+                mydb.insert_ing(33, "Butter", 3);
+                mydb.insert_ing(34, "Goat Cheese", 3);
+                mydb.insert_ing(35, "Cream", 3);
+                mydb.insert_ing(36, "Margarine", 3);
+                mydb.insert_ing(37, "Ice Cream", 3);
+                mydb.insert_ing(38, "Chicken", 4);
+                mydb.insert_ing(39, "Beef", 4);
+                mydb.insert_ing(40, "Pork", 4);
+                mydb.insert_ing(41, "Lamb", 4);
+                mydb.insert_ing(42, "Mutton", 4);
+                mydb.insert_ing(43, "Bacon", 4);
+                mydb.insert_ing(44, "Crabs", 5);
+                mydb.insert_ing(45, "Salmon", 5);
+                mydb.insert_ing(46, "Shrimp", 5);
+                mydb.insert_ing(47, "Prawns", 5);
+                mydb.insert_ing(48, "Lobsters", 5);
+                mydb.insert_ing(49, "Oysters", 5);
+                mydb.insert_ing(50, "Skate", 5);
+                mydb.insert_ing(51, "Baking Soda", 6);
+                mydb.insert_ing(52, "Yeast", 6);
+                mydb.insert_ing(53, "Honey", 6);
+                mydb.insert_ing(54, "Choco Powder", 6);
+                mydb.insert_ing(55, "Icing Sugar", 6);*/
+
+                /*mydb.insert_recipe(1,"DIM SIM", "STEP-1: Place the mince, chilli, garlic, ginger, coriander and fish sauce in a bowl. Mix until well combined. Lay the wonton wrappers out in a single layer on a clean surface. Spoon teaspoonfuls of the mixture into the centre of each wonton. Brush the edges of one wonton and bring the edges up to tightly enclose the filling. Press to seal.\n" +
+                        "STEP-2: Line a large steamer basket with non-stick baking paper. Arrange the wontons over the base of the basket in a single layer. Place the basket over a wok of barely simmer water (making sure the water doesn't touch the base). Cover and steam for 8-10 minutes or until cooked. Transfer to a serving plate and cover loosely with foil to keep warm. Repeat with remaining dim sims.\n" +
+                        "STEP-3: Meanwhile, to make the dipping sauce, combine the sweet chilli sauce, lime juice and fish sauce in a small bowl.\n");
+
+               /*Cursor hotdogrec = mydb.gethotdogrec();
+                hotdogrec.moveToFirst();
+                while (!hotdogrec.isAfterLast()){
+                    String Name = hotdogrec.getString(1);
+                    Log.i("Rec Desc", Name);
+                    hotdogrec.moveToNext();
+                }*/
+
+                /*Cursor veging = mydb.getvegIng();
                 //ArrayList<String> Alling = mydb.getAllCatNames();
               // for (String name : Alling){
                   // Log.i("Veg_ing", name);
-               Alling.moveToFirst();
-                while (!Alling.isAfterLast()){
-                   String Name = Alling.getString(1);
-                    Log.i("Cat_ing", Name);
-                    Alling.moveToNext();
+               veging.moveToFirst();
+                while (!veging.isAfterLast()){
+                   String Name = veging.getString(1);
+                    Log.i("Ing_name", Name);
+                    veging.moveToNext();
+                }
+*/
+                Cursor fruitsing = mydb.getdimsimrec();
+                fruitsing.moveToFirst();
+                while (!fruitsing.isAfterLast()){
+                    String Name = fruitsing.getString(2);
+                    Log.i("Ing_name", Name);
+                    fruitsing.moveToNext();
+                }
+
+
+/*
+                Cursor meating = mydb.getmeatIng();
+                dairying.moveToFirst();
+                while (!meating.isAfterLast()){
+                    String Name = meating.getString(1);
+                    Log.i("Ing_name", Name);
+                    meating.moveToNext();
+                }
+
+                Cursor seaing = mydb.getseafoodIng();
+                seaing.moveToFirst();
+                while (!seaing.isAfterLast()){
+                    String Name = seaing.getString(1);
+                    Log.i("Ing_name", Name);
+                    seaing.moveToNext();
+                }
+
+                Cursor bakerying = mydb.getbakeryIng();
+                bakerying.moveToFirst();
+                while (!bakerying.isAfterLast()){
+                    String Name = bakerying.getString(1);
+                    Log.i("Ing_name", Name);
+                    bakerying.moveToNext();
                 }
                 /*Cursor Allcat = mydb.getIng();
 
@@ -94,7 +168,7 @@ public class Asia_cat extends Look_for_recipes {
 
                     Allcat.moveToNext();
 
-                }
+                }*/
 
 
            /* Cursor catnames = mydb.getAllCatNames(catname);
@@ -106,33 +180,47 @@ public class Asia_cat extends Look_for_recipes {
             }
 
 */
-                //AsiaRecipe asiaRecipe = new AsiaRecipe();
+        //AsiaRecipe asiaRecipe = new AsiaRecipe();
 
-                /**asian_recipe = (TextView) findViewById(R.id.dimsum);
-                 Typeface face = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
-                 asian_recipe.setTypeface(face);
+        /**asian_recipe = (TextView) findViewById(R.id.dimsum);
+         Typeface face = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
+         asian_recipe.setTypeface(face);
 
-                 textview_asian = (TextView) findViewById(R.id.textView);
-                 Typeface face2 = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
-                 textview_asian.setTypeface(face2);
+         textview_asian = (TextView) findViewById(R.id.textView);
+         Typeface face2 = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
+         textview_asian.setTypeface(face2);
 
-                 textview1_asian = (TextView) findViewById(R.id.textView);
-                 Typeface face3 = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
-                 textview1_asian.setTypeface(face3);
+         textview1_asian = (TextView) findViewById(R.id.textView);
+         Typeface face3 = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
+         textview1_asian.setTypeface(face3);
 
-                 textview2_asian = (TextView) findViewById(R.id.textView2);
-                 Typeface face4 = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
-                 textview2_asian.setTypeface(face4);
+         textview2_asian = (TextView) findViewById(R.id.textView2);
+         Typeface face4 = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
+         textview2_asian.setTypeface(face4);
 
-                 textview3_asian = (TextView) findViewById(R.id.textView);
-                 Typeface face5 = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
-                 textview3_asian.setTypeface(face5);
+         textview3_asian = (TextView) findViewById(R.id.textView);
+         Typeface face5 = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
+         textview3_asian.setTypeface(face5);
 
-                 textview4_asian = (TextView) findViewById(R.id.textView);
-                 Typeface face6 = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
-                 textview4_asian.setTypeface(face6);
-                 */
+         textview4_asian = (TextView) findViewById(R.id.textView);
+         Typeface face6 = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
+         textview4_asian.setTypeface(face6);
+         */
+
+    }
+    private void displayListView() {
+        Cursor Alling = mydb.getdimsimrec();
+        String[] getingnames = new String[]{
+                DBHelper.REC_DESC_COL
+        };
+        int[] getingid = new int[]{R.id.text_id};
+
+        //create an ArrayAdaptar from the String Array
+        SimpleCursorAdapter myCursorAdapter = new SimpleCursorAdapter(
+                this, R.layout.veg_ing_chkbx_activity, Alling, getingnames, getingid);
+        ListView listView = (ListView) findViewById(R.id.dimsum_desc);
+        listView.setAdapter(myCursorAdapter);
+        // Assign adapter to ListView
 
     }
 }
-
