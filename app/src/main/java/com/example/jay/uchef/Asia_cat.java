@@ -70,83 +70,16 @@ public class Asia_cat extends Look_for_recipes {
                 mydb.insert_ing(27,"Papaya", 2);
                 mydb.insert_ing(28,"Plum", 2);
                 mydb.insert_ing(29, "Sapota", 2);
-                mydb.insert_ing(30, "Milk", 3);
-                mydb.insert_ing(31, "Cheese", 3);
-                mydb.insert_ing(32, "Yogurt", 3);
-                mydb.insert_ing(33, "Butter", 3);
-                mydb.insert_ing(34, "Goat Cheese", 3);
-                mydb.insert_ing(35, "Cream", 3);
-                mydb.insert_ing(36, "Margarine", 3);
-                mydb.insert_ing(37, "Ice Cream", 3);
-                mydb.insert_ing(38, "Chicken", 4);
-                mydb.insert_ing(39, "Beef", 4);
-                mydb.insert_ing(40, "Pork", 4);
-                mydb.insert_ing(41, "Lamb", 4);
-                mydb.insert_ing(42, "Mutton", 4);
-                mydb.insert_ing(43, "Bacon", 4);
-                mydb.insert_ing(44, "Crabs", 5);
-                mydb.insert_ing(45, "Salmon", 5);
-                mydb.insert_ing(46, "Shrimp", 5);
-                mydb.insert_ing(47, "Prawns", 5);
-                mydb.insert_ing(48, "Lobsters", 5);
-                mydb.insert_ing(49, "Oysters", 5);
-                mydb.insert_ing(50, "Skate", 5);
-                mydb.insert_ing(51, "Baking Soda", 6);
-                mydb.insert_ing(52, "Yeast", 6);
-                mydb.insert_ing(53, "Honey", 6);
-                mydb.insert_ing(54, "Choco Powder", 6);
-                mydb.insert_ing(55, "Icing Sugar", 6);
 */
-
-                /*Cursor veging = mydb.getvegIng();
+                Cursor Alling = mydb.getCat();
                 //ArrayList<String> Alling = mydb.getAllCatNames();
               // for (String name : Alling){
                   // Log.i("Veg_ing", name);
-               veging.moveToFirst();
-                while (!veging.isAfterLast()){
-                   String Name = veging.getString(1);
-                    Log.i("Ing_name", Name);
-                    veging.moveToNext();
-                }
-
-                Cursor fruitsing = mydb.getfruitsIng();
-                fruitsing.moveToFirst();
-                while (!fruitsing.isAfterLast()){
-                    String Name = fruitsing.getString(1);
-                    Log.i("Ing_name", Name);
-                    fruitsing.moveToNext();
-                }
-*/
-                Cursor dairying = mydb.getdairyIng();
-                dairying.moveToFirst();
-                while (!dairying.isAfterLast()){
-                    String Name = dairying.getString(1);
-                    Log.i("Ing_name", Name);
-                    dairying.moveToNext();
-                }
-/*
-                Cursor meating = mydb.getmeatIng();
-                dairying.moveToFirst();
-                while (!meating.isAfterLast()){
-                    String Name = meating.getString(1);
-                    Log.i("Ing_name", Name);
-                    meating.moveToNext();
-                }
-
-                Cursor seaing = mydb.getseafoodIng();
-                seaing.moveToFirst();
-                while (!seaing.isAfterLast()){
-                    String Name = seaing.getString(1);
-                    Log.i("Ing_name", Name);
-                    seaing.moveToNext();
-                }
-
-                Cursor bakerying = mydb.getbakeryIng();
-                bakerying.moveToFirst();
-                while (!bakerying.isAfterLast()){
-                    String Name = bakerying.getString(1);
-                    Log.i("Ing_name", Name);
-                    bakerying.moveToNext();
+               Alling.moveToFirst();
+                while (!Alling.isAfterLast()){
+                   String Name = Alling.getString(1);
+                    Log.i("Cat_ing", Name);
+                    Alling.moveToNext();
                 }
                 /*Cursor Allcat = mydb.getIng();
 
@@ -161,7 +94,7 @@ public class Asia_cat extends Look_for_recipes {
 
                     Allcat.moveToNext();
 
-                }*/
+                }
 
 
            /* Cursor catnames = mydb.getAllCatNames(catname);
