@@ -1,4 +1,4 @@
-package in.ladvas.uchef;
+package com.example.jay.myapplication;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -6,30 +6,22 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CursorAdapter;
-import android.widget.GridView;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.BaseAdapter;
-
-import in.ladvas.uchef.R;
 
 import java.util.ArrayList;
 
 /**
- * Created by JAY on 9/1/2015.
+ * Created by JAY on 10/6/2015.
  */
 public class Seafood_cat extends Categories {
     DBHelper mydb;
@@ -46,7 +38,7 @@ public class Seafood_cat extends Categories {
 
         //GridView gridview = (GridView) findViewById(R.id.gridview);
         //gridview.setAdapter(new ImageAdapter(this));
-        lv = (ListView) findViewById(R.id.listviewS);
+        lv = (ListView) findViewById(R.id.listView_seafood);
         Typeface face = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
         tx = (TextView) findViewById(R.id.veg_id);
         Typeface face_veg = Typeface.createFromAsset(getAssets(), "fonts/Avalon.ttf");
@@ -72,11 +64,10 @@ public class Seafood_cat extends Categories {
         //create an ArrayAdaptar from the String Array
         SimpleCursorAdapter myCursorAdapter = new SimpleCursorAdapter(
                 this, R.layout.veg_ing_chkbx_activity, Alling, getingnames, getingid);
-        ListView listView = (ListView) findViewById(R.id.listviewS);
+        ListView listView = (ListView) findViewById(R.id.listView_seafood);
         listView.setAdapter(myCursorAdapter);
         // Assign adapter to ListView
 
     }
 
 }
-
