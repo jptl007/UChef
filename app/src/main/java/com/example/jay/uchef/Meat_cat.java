@@ -26,18 +26,21 @@ import java.util.ArrayList;
 /**
  * Created by JAY on 9/4/2015.
  */
-public class Meat_cat extends Categories {
+public class Meat_cat extends Categories{
 
     DBHelper mydb;
+    CheckBox c;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         mydb = new DBHelper(this);
         ListView lv;
         TextView tx;
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.meat_cat);
+        //c = (CheckBox) findViewById(R.id.veg_id);
+
 
         //GridView gridview = (GridView) findViewById(R.id.gridview);
         //gridview.setAdapter(new ImageAdapter(this));
@@ -57,9 +60,9 @@ public class Meat_cat extends Categories {
     }
 
     private void displayListView() {
-        Cursor Alling = mydb.gethotdogrec();
+        Cursor Alling = mydb.getvegIng();
         String[] getingnames = new String[]{
-                DBHelper.REC_DESC_COL
+                DBHelper.ING_NAME_COL
         };
         int[] getingid = new int[]{R.id.veg_id};
 
@@ -72,6 +75,75 @@ public class Meat_cat extends Categories {
 
     }
 
+    public class myCursorAdapter extends SimpleCursorAdapter {
+        private Cursor c;
+        private Context context;
+        private ArrayList<String> list = new ArrayList<String>();
+        private ArrayList<Boolean> itemChecked = new ArrayList<Boolean>();
+
+// itemChecked will store the position of the checked items.
+
+        public myCursorAdapter(Context context, int layout, Cursor c, String[] from,
+                             int[] to) {
+            super(context, layout, c, from, to);
+            this.c = c;
+            this.context = context;
+
+            for (int i = 0; i < this.getCount(); i++) {
+                itemChecked.add(i, false); // initializes all items value with false
+            }
+
+        }
+        private class ViewHolder
+        {
+            TextView code;
+            CheckBox name;
+        }
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent)
+        {
+
+            ViewHolder holder = null;
+            Log.v("ConvertView", String.valueOf(position));
+            if (convertView == null)
+            {
+                LayoutInflater vi = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                convertView = vi.inflate(R.layout.veg_ing_chkbx_activity, null);
+                holder = new ViewHolder();
+                //holder.code = (TextView) convertView.findViewById(R.id.code);
+                holder.name = (CheckBox) convertView.findViewById(R.id.checkBox1);
+                convertView.setTag(holder);
+                CheckBox cb = (CheckBox) convertView.findViewById(R.id.checkBox1);
+                holder.name.setOnClickListener( new View.OnClickListener()
+                {
+                    public void onClick(View v)
+                    {
+                        CheckBox cb = (CheckBox) v.findViewById(R.id.checkBox1);
+                        if (cb.isChecked()) {
+                            itemChecked.set(position, true);
+                            // do some operations here
+                        } else if (!cb.isChecked()) {
+                            itemChecked.set(position, false);
+                            // do some operations here
+                        }
+                    }});
+                holder.name.setChecked(itemChecked.get(position));
+            }
+            else
+            {
+                holder = (ViewHolder) convertView.getTag();
+            }
+            /*holder.name.setText(code.get(position).toString());
+            //holder.code.setText(" " + state.getCode() + " ");
+            holder.name.setText(state.getName());
+            holder.name.setChecked(state.isSelected());
+
+            holder.name.setTag(state);*/
+
+            return convertView;
+        }
+
+    }
 
 
    /* private void checkButtonClick()
