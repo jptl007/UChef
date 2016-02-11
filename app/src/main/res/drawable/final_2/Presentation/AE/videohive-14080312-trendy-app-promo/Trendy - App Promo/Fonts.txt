@@ -1,0 +1,9 @@
+Font used in Project - Helvetica Neue
+https://www.myfonts.com/fonts/linotype/neue-helvetica/
+
+You can also use similar free fonts:
+Open Sans:
+https://www.google.com/fonts/specimen/Open+Sans
+
+Roboto:
+https://www.google.com/fonts/specimen/Roboto
