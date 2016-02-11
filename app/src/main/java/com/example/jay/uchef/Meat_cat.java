@@ -1,9 +1,11 @@
 package in.ladvas.uchef;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -40,7 +42,10 @@ public class Meat_cat extends Categories{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.meat_cat);
         //c = (CheckBox) findViewById(R.id.veg_id);
-
+        CheckBox c = (CheckBox) findViewById(R.id.checkBox1);
+        boolean checked = PreferenceManager.getDefaultSharedPreferences(this)
+                .getBoolean("checkBox1", false);
+        c.setChecked(checked);
 
         //GridView gridview = (GridView) findViewById(R.id.gridview);
         //gridview.setAdapter(new ImageAdapter(this));
@@ -78,7 +83,7 @@ public class Meat_cat extends Categories{
     public class myCursorAdapter extends SimpleCursorAdapter {
         private Cursor c;
         private Context context;
-        private ArrayList<String> list = new ArrayList<String>();
+        private Cursor Alling;
         private ArrayList<Boolean> itemChecked = new ArrayList<Boolean>();
 
 // itemChecked will store the position of the checked items.
@@ -96,17 +101,19 @@ public class Meat_cat extends Categories{
         }
         private class ViewHolder
         {
-            TextView code;
+
             CheckBox name;
         }
         @Override
         public View getView(final int position, View convertView, ViewGroup parent)
         {
-
+            TextView code;
+            //View view = convertView;
             ViewHolder holder = null;
             Log.v("ConvertView", String.valueOf(position));
             if (convertView == null)
             {
+
                 LayoutInflater vi = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 convertView = vi.inflate(R.layout.veg_ing_chkbx_activity, null);
                 holder = new ViewHolder();
@@ -120,6 +127,8 @@ public class Meat_cat extends Categories{
                     {
                         CheckBox cb = (CheckBox) v.findViewById(R.id.checkBox1);
                         if (cb.isChecked()) {
+                            SharedPreferences preferences = context.getSharedPreferences("prefs_name", Context.MODE_PRIVATE);
+                            preferences.edit().putBoolean("checked", true).commit();
                             itemChecked.set(position, true);
                             // do some operations here
                         } else if (!cb.isChecked()) {
@@ -128,21 +137,19 @@ public class Meat_cat extends Categories{
                         }
                     }});
                 holder.name.setChecked(itemChecked.get(position));
-            }
-            else
-            {
+            } else {
                 holder = (ViewHolder) convertView.getTag();
             }
-            /*holder.name.setText(code.get(position).toString());
+            code = null;
+            //holder.name.setText(convertView.get(position).toString());
             //holder.code.setText(" " + state.getCode() + " ");
-            holder.name.setText(state.getName());
-            holder.name.setChecked(state.isSelected());
+            //holder.name.setText(convertView.getName());
+            holder.name.setChecked(code.isSelected());
 
-            holder.name.setTag(state);*/
+            holder.name.setTag(code);
 
-            return convertView;
+            return code;
         }
-
     }
 
 
